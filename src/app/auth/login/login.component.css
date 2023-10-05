@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+body {
+  font-family: 'PT Serif', serif;
+}
+
+/* Aplicar 'Roboto' a elementos específicos si es necesario */
+h1, h2, h3, label, input {
+  font-family: 'PT Serif', serif;
+}
+
+/* Aplicar 'Roboto Slab' a elementos específicos si es necesario */
+blockquote, .slab-text {
+  font-family: 'PT Serif', serif;
+}
+.Title{
+  text-align: center;
+  color: rgb(8, 8, 8);
+  font-size: 800;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+.sections{
+  display: flex;
+  justify-content: center;
+  margin: 80px;
+}
+.Contend-Dad{
+  background-color: #212529;
+  border: 2px solid;
+  border-radius: 2rem;
+
+}
+.contend-son{
+  width: auto;
+}
+
+.form-label{
+  font-size: large ;  
+  color:#ffffff;
+  font-weight: 600;
+}
+a{
+  color:#ffffff;
+}
+.form-check-label{
+  color: #ffffff;
+}
+.link{
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none; /* Elimina cualquier subrayado o decoración del enlace */
+  cursor: pointer;
+  font-family: 'Merriweather', serif;
+}
+.botton{
+  display: flex;
+  justify-content: center;
+}
+
+/* Resto de tu CSS */
+.rounded-t-5 {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+@media (min-width: 992px) {
+  .rounded-tr-lg-0 {
+    border-top-right-radius: 0;
+  }
+
+  .rounded-bl-lg-5 {
+    border-bottom-left-radius: 0.5rem;
+  }
+}
