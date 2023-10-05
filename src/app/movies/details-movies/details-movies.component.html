@@ -1,72 +1,43 @@
-<app-header></app-header>
+<app-header></app-header> 
 
-<div class="card" >
-    <div class="card__img"> <img [src]= "'https://image.tmdb.org/t/p/w500'+ movie.poster_path" class="st53" alt=""></div>
-    <div class="card__descr-wrapper">
+  <div class="card" >
+      <div class="card__img"> <img [src]= "getImageUrl(movie?.poster_path)" class="st53" alt=""></div>
+      <div class="card__descr-wrapper">
+        <p class="card__title">
+       {{movie?.title}}
+      </p>
       <p class="card__title">
-     {{movie.title}}
-    </p>
-    <p class="card__title">
-      {{movie.tagline}}
-     </p>
-      <p class="card__subtitle">
-      <span class="subtitle"> Relase Date: {{movie.release_date}}</span>
-      <span class="subtitle">Géneros:
-        <ul>
-          <li *ngFor="let gender of movie.genres">{{ gender.name }}</li>
-        </ul></span>
-      <span class="subtitle">Duration: {{movie.runtime}} min</span>
-   
-    </p>
-    <div class="card-button">
-        <a href="#" class="socialContainer containerOne">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M9 6l11 0"></path>
-                <path d="M9 12l11 0"></path>
-                <path d="M9 18l11 0"></path>
-                <path d="M5 6l0 .01"></path>
-                <path d="M5 12l0 .01"></path>
-                <path d="M5 18l0 .01"></path>
-             </svg>          </a>
-          
-          <a href="#" class="socialContainer containerTwo">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
-             </svg></a>
-            
-          <a href="#" class="socialContainer containerThree">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bookmark" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M18 7v14l-6 -4l-6 4v-14a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4z"></path>
-             </svg>
-          </a>
-          
-          <a href="#" class="socialContainer containerFour">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"></path>
-             </svg>
-          </a>
-          
-    </div>
-    <p class="card__descr">
-        {{movie.overview}}
-    </p>
-    <div class="director" *ngFor="let productions of movie.production_companies">
-        <div>
-            <img [src]= "'https://image.tmdb.org/t/p/w500'+ productions.logo_path" class="st53" [alt]="productions.name">
-            <p>{{productions.name}}</p>
+        {{movie?.tagline}}
+       </p>
+        <p class="card__subtitle">
+        <span class="subtitle">Date: {{movie?.release_date | date}}</span>
+        <span class="subtitle">Gender:
+          <ul>
+            <li *ngFor="let gender of movie?.genres">{{ gender?.name }}</li>
+          </ul></span>
+          <span class="subtitle">Duration: {{ calculateDuration().hours }} hr {{ calculateDuration().minutes }} min</span>
+
+  
+      </p>
+      <p class="card__descr">
+          {{movie?.overview}}
+      </p>
+      <h4 class="title-Production">Production Companies</h4><br/>
+      <div class="production" >
+        <div class="production-row">
+          <div *ngFor="let productions of movie?.production_companies; let i = index" class="production-item">
+              <img [src]= "getImageUrlProduct(productions.logo_path)" class="image-production" [alt]="productions.name">
+          </div>
         </div>
-         </div>
-    <div class="card__links">
-      <div>
-       <a href=""> <button class="btn btn-primary">
-            Regresar
-          </button>
-        </a>
+        </div>
+      <div class="card__links">
+        <div>
+         <a href="/"> <button >
+              Regresar
+            </button>
+          </a>
+        </div>
       </div>
     </div>
-    </div>
-  </div>
+</div>
+

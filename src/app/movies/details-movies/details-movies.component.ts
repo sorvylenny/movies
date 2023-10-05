@@ -8,19 +8,16 @@ import { MoviesService } from '../services/movies.service';
   styleUrls: ['./details-movies.component.css']
 })
 export class DetailsMoviesComponent implements OnInit{
- movie:any
+ movie:any;
   constructor(
     private movieService:MoviesService,
     private router:Router,
     private activerouter:ActivatedRoute,
- 
-   ) { }
+    ) { }
 
    ngOnInit(): void {
-
     let movieId : any = this.activerouter.snapshot.paramMap.get('id')
     this.movieDetail (movieId)
-
   }
 
   movieDetail(id:number){
@@ -28,11 +25,41 @@ export class DetailsMoviesComponent implements OnInit{
     .subscribe((data:any) => {
     this.movie = data;
     console.log(this.movie)
- 
-   })}
+   });
+  }
+
+  calculateDuration(): { hours: number, minutes: number } {
+    const hours = Math.floor(this.movie?.runtime / 60);
+    const minutes = this.movie?.runtime % 60;
+    return { hours, minutes };
+  }
  
  allCharacters() {
- this.router.navigate(['/'])
+  this.router.navigate(['/'])
+ }
+ /* Method to display the image */
+ getImageUrl(poster_path: string): string {
+  if (!poster_path || poster_path.toLowerCase() === 'null' || poster_path.trim() === '') {
+    // Si no hay poster_path o es 'null' o está vacío, devuelve la imagen predeterminada
+    return 'assets/Image_not_available.jpg';
+  } else {
+    // Si hay un poster_path válido, devuelve la URL completa de la imagen
+    return 'https://image.tmdb.org/t/p/w500' + poster_path;
+  }
+}
+  
+  getImageUrlProduct(logo_path: string): string {
+    const image: string = '/assets/Image_not_available.png';
+    if (!logo_path || logo_path.toLowerCase() === 'null' || logo_path.trim() === '') {
+      // Si no hay poster_path o es 'null' o está vacío, devuelve la imagen predeterminada
+      return 'assets/Image_not_available.jpg';
+      
+    } else {
+
+    return 'https://image.tmdb.org/t/p/w500'+ logo_path;
+  }
+      
+  }
+  
  
-   }
 }
