@@ -148,10 +148,13 @@ body {
 
   @media screen and (min-width: 425px) and (max-width: 767px) {
     .card {
-      width: auto; 
+      width: auto;
       height: auto;
-      margin: 60px auto; 
-      border-radius: 10px; 
+      margin: 130px auto;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
     }
   
     .card__title {
@@ -163,7 +166,7 @@ body {
     }
   
     .st53 {
-      width: 150px; 
+      width: 250px;
       height: auto;
     }
   
@@ -173,7 +176,9 @@ body {
     }
   
     .subtitle ul li::before {
-      font-size: 10px; 
+      content: "";
+      position: absolute;
+      font-size: 10px;
     }
     .production-item {
        margin: 0 5px; 
@@ -193,22 +198,24 @@ body {
       font-size: 11px;
       margin-top: 10px;
     }
+    
     .card__links {
       margin-top: 10px;
       margin-right: 10px;
       display: flex;
-      justify-content:flex-end;
+      justify-content: center;
     }
+  
     button {
-      width: 70px;
-      height: 30px;
+      width: 100px;
+      height: 40px;
       border: 3px solid #474f69;
       border-radius: 45px;
       transition: all 0.3s;
       cursor: pointer;
       background: white;
       color: #4a4e5c;
-      font-size: 9px;
+      font-size: 14px;
       font-weight: 900;
       font-family: 'PT Serif', serif;
     }

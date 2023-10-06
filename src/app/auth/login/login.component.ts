@@ -1,41 +1,54 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 
-interface Login{
+interface Login {
   email: string;
   password: string;
-  userName: string
+  userName: string;
 }
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.css"]
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   myForm: FormGroup = this.fb.group({
-    email: ['test1@test.com', [Validators.required, Validators.email]],
-    password: ['1234567', [Validators.required, Validators.minLength(7)]],
-    userName: ['Katherine Flores']
+    email: ["", [Validators.required, Validators.email]],
+    password: ["", [Validators.required, Validators.minLength(7)]],
+    userName: ["Guest"] 
   });
-
+  showAlert = false;
   constructor(private fb: FormBuilder, private router: Router) {}
+  ngOnInit(): void {
+    const storedUserName = localStorage.getItem('userName');
+    if (storedUserName) {
+      this.myForm.get('userName')!.setValue(storedUserName); // Set stored userName if exists
+    }
+  }
 
   campoNoEsValido(campo: string) {
-    return this.myForm.controls[campo].errors && this.myForm.controls[campo].touched;
+    return (
+      this.myForm.controls[campo].errors && this.myForm.controls[campo].touched
+    );
   }
 
-  onReset(): void {
-    this.myForm.reset();
-  }
+  get email() { return this.myForm.get('email'); }
+  get password() { return this.myForm.get('password'); }
 
-  goToHome() {
-    const formData: Login = this.myForm.value as Login; // Convertir a la interfaz Login
-    localStorage.setItem('userName', formData.userName);
-    console.table(localStorage)
-    this.router.navigate(['']);
+  login() {
+    // Hardcoded user credentials
+    const hardcodedEmail = 'test@example.com';
+    const hardcodedPassword = 'Abc1234';
+    const hardcodedUserName = 'Katherine Flores';
+
+    if (this.email?.value === hardcodedEmail && this.password?.value === hardcodedPassword) {
+      localStorage.setItem('userName', hardcodedUserName);
+      this.router.navigate(['/']); // Navigate to home or any desired route
+    } else {
+      this.showAlert = true;
+    }
   }
+   
 }
-
-

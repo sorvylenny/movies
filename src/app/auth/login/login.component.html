@@ -2,51 +2,58 @@
 <h3 class="Title">Login</h3>
 <!-- Section: Design Block -->
 <section class=" text-center text-lg-start sections">
-    <div class="card mb-3 Contend-Dad">
-      <div class=" d-flex align-items-center justify-content-center">
-        <div class="col-lg-8 contend-son">
-          <div class="card-body py-5 px-md-5">
-            
-            <form [formGroup]="myForm" 
-            (ngSubmit)="goToHome()" 
+  <div class="card mb-3 Contend-Dad">
+    <div class=" d-flex align-items-center justify-content-center">
+      <div class="col-lg-8 contend-son">
+        <div class="card-body py-5 px-md-5">
+
+          <form [formGroup]="myForm"
+            (ngSubmit)="login()"
             autocomplete="off">
-              <!-- Email input -->
-              <div class="form-outline mb-4">
-                <label class="form-label">Email address</label>
-                <input type="email" class="form-control" formControlName="email"  />
-              </div>
-  
-              <!-- Password input -->
-              <div class="form-outline mb-4">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" formControlName="password" />
-              </div>
-  
-              <!-- 2 column grid layout for inline styling -->
-              <div class="row mb-4">
-                <div class="col d-flex justify-content-center">
-                  <!-- Checkbox -->
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                    <label class="form-check-label" for="form2Example31"> Remember me </label>
-                  </div>
-                </div>
-  
-                <div class="col link">
-                  <!-- Simple link -->
-                  <a href="#!">Recordar Contraseña</a>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label">Email address</label>
+              <input type="email" class="form-control" formControlName="email" />
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control"
+                formControlName="password" />
+            </div>
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+              <div class="col d-flex justify-content-center">
+                <!-- Checkbox -->
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value
+                    id="form2Example31" checked />
+                  <label class="form-check-label" for="form2Example31"> Remember
+                    me </label>
                 </div>
               </div>
-  
-              <!-- Submit button -->
-              <div class="botton">
-                 <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="myForm.invalid"> Sign in</button>
+
+              <div class="col link">
+                <!-- Simple link -->
+                <a href="#!">Recordar Contraseña</a>
               </div>
-  
-            </form>
-  
+            </div>
+
+            <!-- Submit button -->
+            <div class="botton">
+              <button type="submit" class="btn btn-primary btn-block mb-4"
+                [disabled]="myForm.invalid"> Sign in</button>
+            </div>
+
+          </form>
+           <!-- Box the alert -->
+          <div class="alert alert-primary" role="alert" *ngIf="showAlert">
+            Invalid email or password. Please try again.
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

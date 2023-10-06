@@ -1,26 +1,5 @@
 <app-header></app-header>
 <div class="container">
-  <!--   <div class="slice-Movies">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" *ngFor="let rating of movieRating; let isFirst = first">
-              <div class="carousel-item active">
-                <img [src]="getImageUrl(rating.backdrop_path)" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-caption d-none d-md-block movie-description">
-                <h5 class="title">{{rating.title}}</h5>
-                <p class="overview">{{rating.overview | slice: 0:130}}</p>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" (click)=" previousPage(page)" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" (click)=" nextPage(page)"  data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Siguiente</span>
-            </button>
-          </div>
-    </div> -->
     <div class="slice-Movies">
     <ng-image-slider 
     [images]="imgCollectionMovies"
@@ -37,9 +16,9 @@
  
      #nav></ng-image-slider>
     </div>
-    <div class="main-title"><span>YOU MOVIE AND TV  CENTRAL</span></div>
+    <div class="main-title"><span>YOUR MOVIE AND TV  CENTRAL</span></div>
 
-    <div class="slice-Movies">
+    <div class="slice-tv">
         <ng-image-slider 
         [images]="imgCollectionTv"
         [direction]="'rtl'"

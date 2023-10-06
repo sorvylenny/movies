@@ -22,7 +22,7 @@
       <!-- Container that has a date and see more button -->
       <div class="card__wrapper">
         <div class="card__content">
-          <div class="card__title">{{item.release_date | date}}</div>
+          <div class="card__title">{{item.release_date |date:' yyyy/ MMMM/dd '}}</div>
           <a (click)="movieDetails(item.id)">
             <div class="card__icon"> <svg color="rgb(224, 223, 220)"
                 style="user-select: none; width: 100%; height: 100%; display: inline-block; fill: rgb(224, 223, 220); flex-shrink: 0; cursor: auto;"

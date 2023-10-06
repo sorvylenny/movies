@@ -16,8 +16,8 @@
       </p>
       <!-- tv release_date-->
       <div class="span-Subtitle">
-        <span class="subtitle"><strong>Date:</strong> {{tv?.release_date |
-          date}}</span>
+        <span class="subtitle"><strong>Date:</strong> {{tv?.first_air_date |
+          date:' yyyy/ MMMM/dd '}}</span>
       </div>
       <!-- tv Gender-->
       <div class="card__subtitle">
@@ -27,10 +27,6 @@
               <li *ngFor="let gender of tv?.genres">{{ gender?.name }}</li>
             </ul></span>
         </div>
-      </div>
-      <!-- tv Duration-->
-      <div class="card__subtitle">
-        <span class="subtitle"><strong>Relase Date:</strong>{{tv?.first_air_date|date}}</span>
       </div>
       <!-- tv Overview-->
       <div class="container">

@@ -128,3 +128,16 @@ body {
 .page-link {
     color: #000;
 }
+
+/* Estilos para pantallas de 425px a 767px */
+@media (min-width: 425px) and (max-width: 767px) {
+    .card-container-dad {
+      justify-content: center; 
+    }
+  
+    .card-container {
+      width: 80%; 
+    }
+  }
+
+  

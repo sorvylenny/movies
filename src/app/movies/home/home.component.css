@@ -4,7 +4,15 @@ body {
   font-family: 'PT Serif', serif;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+
 .slice-Movies {
+  width: 100%;
+  margin-top: 80px;
+}
+
+.slice-tv{
   width: 100%;
   margin-top: 80px;
 }
@@ -49,6 +57,27 @@ body {
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 5rem;
+  font-size: 4.5rem;
   margin-top: 40px;
+  font-family: 'Dela Gothic One', cursive;
+}
+/* Tu CSS anterior antes de los estilos para la pantalla específica */
+
+/* Estilos para pantallas de 425px a 767px */
+@media (min-width: 425px) and (max-width: 767px) {
+  .slice-Movies{
+    width: 100%;
+    margin-top: 150px;
+  }
+  .slice-tv{
+    width: 100%;
+    margin-top: 50px;
+  }
+  .main-title{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2.5rem;
+    font-family: 'Dela Gothic One', cursive;
+  }
 }

@@ -159,12 +159,15 @@ button:hover {
   .card {
     width: auto;
     height: auto;
-    margin: 60px auto;
+    margin: 130px auto;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 
   .card__title {
-    font-size: 12px;
+    font-size: 20px;
   }
 
   .card__img {
@@ -172,16 +175,18 @@ button:hover {
   }
 
   .st53 {
-    width: 150px;
+    width: 200px;
     height: auto;
   }
 
   .subtitle {
-    font-size: 6px;
+    font-size: 14px;
     text-align: left;
   }
 
   .subtitle ul li::before {
+    content: "";
+    position: absolute;
     font-size: 10px;
   }
 
@@ -203,7 +208,7 @@ button:hover {
   .card__descr {
     color: var(--font-color);
     text-align: justify;
-    font-size: 11px;
+    font-size: 14px;
     margin-top: 10px;
   }
 
@@ -211,19 +216,19 @@ button:hover {
     margin-top: 10px;
     margin-right: 10px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   button {
-    width: 70px;
-    height: 30px;
+    width: 100px;
+    height: 40px;
     border: 3px solid #474f69;
     border-radius: 45px;
     transition: all 0.3s;
     cursor: pointer;
     background: white;
     color: #4a4e5c;
-    font-size: 9px;
+    font-size: 14px;
     font-weight: 900;
     font-family: 'PT Serif', serif;
   }

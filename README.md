@@ -1,27 +1,62 @@
-# Movies
+# Movies and TV Shows App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+Este proyecto es una aplicación web desarrollada en Angular que proporciona información sobre películas y series de televisión. Permite a los usuarios explorar contenido, obtener detalles sobre películas y programas de televisión, buscar títulos específicos y acceder a una variedad de funcionalidades relacionadas.
 
-## Development server
+## Funcionalidades Principales
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Home**: Página principal que muestra una selección de películas y programas de televisión populares.
+- **Movies**: Página que presenta información sobre películas, incluyendo detalles y opciones de búsqueda.
+- **TV Shows**: Página que presenta información sobre series de televisión, incluyendo detalles y opciones de búsqueda.
+- **Detalles de Película**: Página que muestra información detallada sobre una película específica.
+- **Detalles de Serie de TV**: Página que muestra información detallada sobre una serie de televisión específica.
+- **Búsqueda**: Permite a los usuarios buscar películas y series de televisión por título.
+- **Login**: Permite a los usuarios autenticarse para acceder a funcionalidades específicas.
+    --**FuncionLogin**: esta funcion fue harcodeada usar el siguiente Email : test@example.com, Password: Abc1234.
 
-## Code scaffolding
+## Dependencias 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Este proyecto utiliza las siguientes dependencias:
 
-## Build
+- [Angular: Plataforma para construir aplicaciones web escalables y dinámicas.](https://angular.io/)
+  - [@angular/animations](https://angular.io/api/animations) (^16.2.0)
+  - [@angular/common](https://angular.io/api/common) (^16.2.0)
+  - [@angular/compiler](https://angular.io/api/compiler) (^16.2.0)
+  - [@angular/core](https://angular.io/api/core) (^16.2.0)
+  - [@angular/forms](https://angular.io/api/forms) (^16.2.0)
+  - [@angular/platform-browser](https://angular.io/api/platform-browser) (^16.2.0)
+  - [@angular/platform-browser-dynamic](https://angular.io/api/platform-browser-dynamic) (^16.2.0)
+  - [@angular/router](https://angular.io/api/router) (^16.2.0)
+- [Bootstrap: Marco de diseño para páginas web.](https://getbootstrap.com/)
+  - [bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/) (^5.3.2)
+- [ng-image-slider: Componente de Angular para crear sliders de imágenes.](https://www.npmjs.com/package/ng-image-slider)
+  - [ng-image-slider](https://www.npmjs.com/package/ng-image-slider) (^7.0.1)
+- [RxJS: Biblioteca para programación reactiva.](https://rxjs.dev/)
+  - [rxjs](https://rxjs.dev/) (~7.8.0)
+- [TypeScript: Superset de JavaScript que agrega tipos estáticos al lenguaje.](https://www.typescriptlang.org/)
+  - [typescript](https://www.typescriptlang.org/) (~5.1.3)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Otras Dependencias
 
-## Running unit tests
+- [tslib](https://www.npmjs.com/package/tslib) (^2.3.0)
+- [zone.js](https://github.com/angular/zone.js) (~0.13.0)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Servidor de Desarrollo
 
-## Running end-to-end tests
+Ejecuta `ng serve` para iniciar un servidor de desarrollo. Navega a `http://localhost:4200/`. La aplicación se recargará automáticamente si realizas cambios en los archivos fuente.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Compilación
 
-## Further help
+Ejecuta `ng build` para compilar el proyecto. Los artefactos de construcción se almacenarán en el directorio `dist/`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Cómo Empezar
+
+1. Clona este repositorio: `git clone <URL_del_repositorio>`
+2. Instala las dependencias: `npm install --force` debido a la dependencia `ng-image-slider`
+3. Inicia la aplicación: `ng serve`
+4. Abre tu navegador web y visita `http://localhost:4200/`
+
+¡Disfruta explorando películas y programas de televisión en la aplicación!
+
+## Autor
+
+Este proyecto fue desarrollado por [Katherine Flores] <floresmKatherine@gmail.com>.
