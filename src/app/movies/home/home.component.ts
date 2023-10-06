@@ -1,8 +1,10 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
-import { Result } from '../interface/movie';
+import { ImageData, Result } from '../interface/movie';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
+import { NgImageSliderComponent } from 'ng-image-slider';
+import { TvService } from '../services/tv.service';
 
 
 @Component({
@@ -12,82 +14,84 @@ import { FormControl } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-playingMovie: Result[]=[];
+movieResult: Result[]=[];
 page:number= 1;
 searchControl : string = '';
+tvResult : Result[]=[]
+imgCollectionMovies: Array<object> = [];
+imgCollectionTv: Array<object> = [];
 
 constructor(private movieService: MoviesService, 
+  private tvService: TvService, 
             private router:Router,
-            private elementRef: ElementRef ) {}   
+           ) {}   
 
 ngOnInit(): void {
-    this.allMovies(this.page);
+    this.moviesSlider(this.page);
+    this.tvSlider(this.page)
+   
   }
 /* Method that brings information from the movies service and pagination */
-allMovies(page:number){
-  this.movieService.moviesAll(this.page)
-      .subscribe((movies:any)=>{
-          this.playingMovie= movies.results;  
-        })
-  }
-  /* Method information from the search movies service */
-  searchForName() {
-    this.movieService.searchMovie(this.searchControl)
-      .subscribe((search:any) => {
-        this.playingMovie = search.results;
-      });
-  }
-  
-  /*Pagination method the previous*/
-  previousPage(page:number){
-   if(page === 1){
-     this.scrollToTop();
-    return ;
-   }
-  this.allMovies (this.page = page-1)
-  }
-  /*Pagination method the next*/
-  nextPage(page:number){
-    this.allMovies (this.page = page+1);
-    this.scrollToTop();
-  }
-   /* Methods to capture page addresses */
-  directPageOne(page:number){
-    this.allMovies(this.page= page);
-    this.scrollToTop();
-  }
-
-  directPageTwo(page:number){
-    this.allMovies(this.page= page+1);
-    this.scrollToTop();
-  }
-  directPageTree(page:number){
-    this.allMovies(this.page= page+2);
-    this.scrollToTop();
-  }
-  /* Method to browse the movie id and see more information about it */
-  movieDetails(id: number) {
-   this.router.navigate(['detailsMovie',id])
-  }
-  /* Method to display the image */
-  getImageUrl(poster_path: string): string {
-    if (!poster_path || poster_path.toLowerCase() === 'null' || poster_path.trim() === '') {
-      // Si no hay poster_path o es 'null' o está vacío, devuelve la imagen predeterminada
-      return 'assets/Image_not_available.jpg';
-    } else {
-      // Si hay un poster_path válido, devuelve la URL completa de la imagen
-      return 'https://image.tmdb.org/t/p/w500' + poster_path;
-    }
-  }
-  
-
-  private scrollToTop() {
-    const targetElement = this.elementRef.nativeElement; // Accede al elemento DOM actual
-    window.scrollTo({
-      top: targetElement.offsetTop,
-      behavior: 'smooth' // Desplazamiento suave
+moviesSlider(page: number) {
+  this.movieService.sliderMovies(page)
+    .subscribe((movies: any) => {
+      this.movieResult = movies.results;
+      this.imgCollectionMovies = this.movieResult.map((movie: any) => ({
+        image: this.getImageUrl(movie.backdrop_path),
+        thumbImage: this.getImageUrl(movie.backdrop_path),
+        alt: movie.title, 
+        title: movie.title, 
+        movieId:movie.id,  
+        
+      }));
+      
     });
-  }
 }
+
+tvSlider(page: number) {
+  this.tvService.sliderTV(page)
+    .subscribe((tv: any) => {
+      this.tvResult = tv.results;
+      this.imgCollectionTv = this.tvResult.map((tv: any) => ({
+        image: this.getImageUrl(tv.backdrop_path),
+        thumbImage: this.getImageUrl(tv.backdrop_path),
+        alt: tv.name, 
+        title: tv.name, 
+        movieId:tv.id,  
+        
+      }));
+      
+    });
+}
+
+
+
+
+
+  /* Method to display the image */
+getImageUrl(backdrop_path: string):string{
+ if (!backdrop_path || backdrop_path.toLowerCase() === 'null' || backdrop_path.trim() === '') {
+   return 'assets/Image_not_available.jpg';
+ } else {
+   return 'https://image.tmdb.org/t/p/w500' + backdrop_path;
+ }
+}
+// manejador de evento click en Slider Movies 
+handleImageClickMovie(index: number) {
+  const clickedImage:ImageData = this.imgCollectionMovies[index];
+  const movieId = clickedImage.movieId;
+
+ 
+  this.router.navigate(['detailsMovie', movieId]);
+ }
+
+ handleImageClickTv(index: number) {
+  const clickedImage:ImageData = this.imgCollectionMovies[index];
+  const tvId = clickedImage.movieId;
+ this.router.navigate(['detailsTv', tvId]);
+ }
+}
+
+
 
 

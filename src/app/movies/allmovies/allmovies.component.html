@@ -1,0 +1,71 @@
+<!-- reusable navbar or header component -->
+<app-header></app-header>
+<!-- Input the search -->
+<div class="container">
+  <div class="input-group">
+    <input type="text"
+           class="form-control input-search"
+           [(ngModel)]="searchControl"
+           placeholder="Search Movies"
+           [autocomplete]="true"
+           (keyup.enter)="searchForName">
+    <button class="btn btn-dark button-search" (click)="searchForName()">Search</button>
+  </div>
+  
+  <!-- Card the movies -->
+  <div class="card-container">
+    <div class="card" *ngFor="let item of playingMovie"(click)="movieDetails(item.id)">
+      <!-- Movies image url-->
+      <div class="card__img"><img [src]="getImageUrl(item.poster_path)" class="st53"></div>
+      <!-- Movie title-->
+      <div class="card__subtitle">{{item.title}}</div>
+      <!-- Container that has a date and see more button -->
+      <div class="card__wrapper">
+        <div class="card__content">
+          <div class="card__title">{{item.release_date | date}}</div>
+          <a (click)="movieDetails(item.id)">
+            <div class="card__icon"> <svg color="rgb(224, 223, 220)"
+                style="user-select: none; width: 100%; height: 100%; display: inline-block; fill: rgb(224, 223, 220); flex-shrink: 0; cursor: auto;"
+                viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                <g color="rgb(224, 223, 220)">
+                  <circle opacity="0.2" r="96" cy="128" cx="128"></circle>
+                  <circle stroke-width="16" stroke-miterlimit="10" stroke="rgb(224, 223, 220)" fill="none" r="96"
+                    cy="128" cx="128"></circle>
+                  <polyline stroke-width="16" stroke-linejoin="round" stroke-linecap="round" stroke="rgb(224, 223, 220)"
+                    fill="none" points="134.1 161.9 168 128 134.1 94.1"></polyline>
+                  <line stroke-width="16" stroke-linejoin="round" stroke-linecap="round" stroke="rgb(224, 223, 220)"
+                    fill="none" y2="128" x2="168" y1="128" x1="88"></line>
+                </g>
+              </svg> 
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Pagination the movies -->
+  <div class="container-Event">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <!-- Previous event -->
+        <li class="page-item">
+          <a class="page-link" (click)="previousPage(page)" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <!-- Pagination event -->
+        </li>
+        <li class="page-item"><a class="page-link" (click)="directPageOne(page)">{{page}}</a></li>
+        <li class="page-item"><a class="page-link" (click)="directPageTwo(page)">{{page+1}}</a></li>
+        <li class="page-item"><a class="page-link" (click)="directPageTree(page)">{{page+2}}</a></li>
+        <!-- Next event -->
+        <li class="page-item">
+          <a class="page-link" (click)="nextPage(page)" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

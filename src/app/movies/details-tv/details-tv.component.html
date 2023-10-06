@@ -1,51 +1,50 @@
 <!-- reusable navbar or header component -->
 <app-header></app-header>
-<!-- Card the movies -->
+<!-- Card the tv -->
 <div class="container">
   <div class="card">
-    <div class="card__img"> <img [src]="getImageUrl(movie?.poster_path)"
+    <div class="card__img"> <img [src]="getImageUrl(tv?.poster_path)"
         class="st53" alt></div>
     <div class="card__descr-wrapper">
-      <!-- Movie title-->
+      <!-- tv title-->
       <p class="card__title">
-        {{movie?.title}}
+        {{tv?.name}}
       </p>
-      <!-- Movie tagline-->
+      <!-- tv tagline-->
       <p class="card__title">
-        {{movie?.tagline}}
+        {{tv?.tagline}}
       </p>
-      <!-- Movie release_date-->
+      <!-- tv release_date-->
       <div class="span-Subtitle">
-        <span class="subtitle"><strong>Date:</strong> {{movie?.release_date |
+        <span class="subtitle"><strong>Date:</strong> {{tv?.release_date |
           date}}</span>
       </div>
-      <!-- Movie Gender-->
+      <!-- tv Gender-->
       <div class="card__subtitle">
         <div class>
           <span class="subtitle"> <strong>Gender:</strong>
             <ul>
-              <li *ngFor="let gender of movie?.genres">{{ gender?.name }}</li>
+              <li *ngFor="let gender of tv?.genres">{{ gender?.name }}</li>
             </ul></span>
         </div>
       </div>
-      <!-- Movie Duration-->
+      <!-- tv Duration-->
       <div class="card__subtitle">
-        <span class="subtitle"><strong>Duration:</strong>{{
-          calculateDuration().hours }} hr {{ calculateDuration().minutes }} min</span>
+        <span class="subtitle"><strong>Relase Date:</strong>{{tv.first_air_date|date}}</span>
       </div>
-      <!-- Movie Overview-->
+      <!-- tv Overview-->
       <div class="container">
         <strong>Overview</strong>
         <p class="card__descr">
-          {{movie?.overview}}
+          {{tv?.overview}}
         </p>
       </div>
-      <!-- Movie Production-->
+      <!-- tv Production-->
       <h4 class="title-Production">Production Companies</h4><br />
       <div class="production">
         <div class="production-row">
           <div
-            *ngFor="let productions of movie?.production_companies; let i = index"
+            *ngFor="let productions of tv?.production_companies; let i = index"
             class="production-item">
             <img [src]="getImageUrlProduct(productions.logo_path)"
               class="image-production" [alt]="productions.name">
@@ -55,7 +54,7 @@
       <!-- Button GoBack-->
       <div class="card__links">
         <div>
-          <a href="./allMovies"> <button>
+          <a href="./allTv"> <button>
               Return
             </button>
           </a>

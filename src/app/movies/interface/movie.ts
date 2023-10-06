@@ -32,3 +32,12 @@ export enum OriginalLanguage {
     En = "en",
     Is = "is",
 }
+//interface para el objeto Slider
+ export interface ImageData {
+    image?: string;
+    thumbImage?: string;
+    alt?: string;
+    title?: string;
+    movieId?: number;  
+    index?: number;
+  }

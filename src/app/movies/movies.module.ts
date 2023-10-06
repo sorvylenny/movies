@@ -7,16 +7,21 @@ import { DetailsMoviesComponent } from './details-movies/details-movies.componen
 import { SharedModule } from '../shared/shared.module';
 import { AuthModule } from '../auth/auth.module';
 import { FormsModule } from '@angular/forms';
+import { AllmoviesComponent } from './allmovies/allmovies.component';
+import { AlltvComponent } from './alltv/alltv.component';
+import { DetailsTvComponent } from './details-tv/details-tv.component';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 
 @NgModule({
-  declarations: [ HomeComponent, DetailsMoviesComponent],
+  declarations: [ HomeComponent, DetailsMoviesComponent, AllmoviesComponent, AlltvComponent, DetailsTvComponent],
   imports: [
     CommonModule,
     MoviesRoutingModule, 
     SharedModule,
     AuthModule,
-    FormsModule
+    FormsModule,
+    NgImageSliderModule
   ],
   exports:[
     HomeComponent, 

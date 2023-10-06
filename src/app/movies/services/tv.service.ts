@@ -2,19 +2,19 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Movies, Result } from '../interface/movie';
+import { Result } from '../interface/movie';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MoviesService {
+export class TvService {
   private baseUrl : string = environment.baseUrl;
   private token: string = environment.token; 
 
   constructor(private http: HttpClient) { }
 
-  moviesAll(page:number):Observable<Result[]>{
-  const url = `${this.baseUrl}/movie/now_playing?language=en-US&page=`+ page;
+  tvAll(page:number):Observable<Result[]>{
+  const url = `${this.baseUrl}/tv/on_the_air?language=en-US&page=`+ page;
   const singedToken = this.token;
   if (singedToken) {
     const headers = new HttpHeaders({
@@ -26,21 +26,9 @@ export class MoviesService {
     }
   }
 
-  sliderMovies(page:number):Observable<Result[]>{
-  const url = `${this.baseUrl}/movie/popular?language=en-US&page=1`+ page;
-  const singedToken = this.token;
-  if (singedToken) {
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${singedToken}`,
-    });
-    return this.http.get<Result[]>(url, { headers });
-      } else {
-      return of([]);
-    }
-  }
 
-  movieDetail(id:number):Observable<Result[]>{
-    const url = `${this.baseUrl}/movie/${id}?&include_adult=false&language=en-US&page=1`
+  tvDetail(id:number):Observable<Result[]>{
+    const url = `${this.baseUrl}/tv/${id}?language=en-US`
     const singedToken = this.token;
     if (singedToken) {
       const headers = new HttpHeaders({
@@ -52,9 +40,9 @@ export class MoviesService {
       }
     }
 
-  searchMovie(query: string):Observable<Result[]>{
+  searchTv(query: string):Observable<Result[]>{
     
-    const url = `${this.baseUrl}/search/movie`
+    const url = `${this.baseUrl}/search/tv`
     
     const params = new HttpParams()
     .set('query', query)
@@ -76,5 +64,18 @@ export class MoviesService {
       return this.http.get<Result[]>(url, options);
       
     }
+
+    sliderTV(page:number):Observable<Result[]>{
+      const url = `${this.baseUrl}/tv/popular?language=en-US&page=1`+ page;
+      const singedToken = this.token;
+      if (singedToken) {
+        const headers = new HttpHeaders({
+          Authorization: `Bearer ${singedToken}`,
+        });
+        return this.http.get<Result[]>(url, { headers });
+          } else {
+          return of([]);
+        }
+      }
 
 }
