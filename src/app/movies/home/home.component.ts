@@ -1,10 +1,11 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
-import { ImageData, Result } from '../interface/movie';
+import { ImageDataMovie, Result } from '../interface/movie';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { NgImageSliderComponent } from 'ng-image-slider';
 import { TvService } from '../services/tv.service';
+import { ImageDataTv } from '../interface/tv.interface';
 
 
 @Component({
@@ -57,7 +58,7 @@ tvSlider(page: number) {
         thumbImage: this.getImageUrl(tv.backdrop_path),
         alt: tv.name, 
         title: tv.name, 
-        movieId:tv.id,  
+        tvId:tv.id,  
         
       }));
       
@@ -78,7 +79,7 @@ getImageUrl(backdrop_path: string):string{
 }
 // manejador de evento click en Slider Movies 
 handleImageClickMovie(index: number) {
-  const clickedImage:ImageData = this.imgCollectionMovies[index];
+  const clickedImage:ImageDataMovie = this.imgCollectionMovies[index];
   const movieId = clickedImage.movieId;
 
  
@@ -86,8 +87,8 @@ handleImageClickMovie(index: number) {
  }
 
  handleImageClickTv(index: number) {
-  const clickedImage:ImageData = this.imgCollectionMovies[index];
-  const tvId = clickedImage.movieId;
+  const clickedImage:ImageDataTv = this.imgCollectionTv[index];
+  const tvId = clickedImage.tvId;
  this.router.navigate(['detailsTv', tvId]);
  }
 }

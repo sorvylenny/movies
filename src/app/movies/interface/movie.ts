@@ -33,7 +33,7 @@ export enum OriginalLanguage {
     Is = "is",
 }
 //interface para el objeto Slider
- export interface ImageData {
+ export interface ImageDataMovie {
     image?: string;
     thumbImage?: string;
     alt?: string;

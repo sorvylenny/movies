@@ -20,3 +20,13 @@ export interface ResultTv {
     vote_average:      number;
     vote_count:        number;
 }
+
+//interface para el objeto Slider
+export interface ImageDataTv {
+    image?: string;
+    thumbImage?: string;
+    alt?: string;
+    title?: string;
+    tvId?: number;  
+    index?: number;
+  }
