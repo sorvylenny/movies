@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
+body {
+  font-family: 'PT Serif', serif;
+}
 
 .slice-Movies {
   width: 100%;
@@ -6,40 +11,41 @@
 
 .carousel-inner {
   display: flex;
-  flex-wrap: nowrap; /* Ensure items stay in a row */
-  justify-content: flex-start; /* Start from the beginning */
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   overflow-x: auto;
 }
 
 .carousel-item {
   flex: 0 0 auto;
-  margin-right: 10px; /* Adjust spacing between items */
+  margin-right: 10px;
 }
 
 .carousel-item:last-child {
   margin-right: 0;
 }
 
-.movie-description{
+.movie-description {
   display: flex;
   justify-content: flex-start;
-  background-color:rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   bottom: 0;
   padding: 5px 30px;
-  position:absolute;
+  position: absolute;
   width: 100%;
   align-items: flex-start;
 }
 
-.title{
-  font-size:24pt;
+.title {
+  font-size: 24pt;
 }
 
-.overview{
-  font-family:'Roboto', sans-serif;
-  text-align: center;
+.overview {
+  font-family: 'PT Serif', serif;
+  text-align: justify;
 }
-.main-title{
+
+.main-title {
   display: flex;
   justify-content: center;
   font-weight: bold;

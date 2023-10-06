@@ -1,20 +1,34 @@
-.input-group{
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
+body {
+    font-family: 'PT Serif', serif;
+}
+
+.input-group {
     display: flex;
     justify-content: center;
     margin-top: 80px;
-  }
-  
-  .input-search{
+}
+
+.input-search {
     border-radius: 2rem;
-  }
-  
-  .button-search{
+}
+
+.button-search {
     border-radius: 2rem;
-  }
+}
+
+.card-container-dad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 20px;
+}
 
 .card-container {
     width: 300px;
-    height: 300px;
+    height: auto;
     position: relative;
     border-radius: 10px;
 }
@@ -24,7 +38,7 @@
     z-index: -1;
     position: absolute;
     inset: 0;
-    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    background: linear-gradient(-45deg, #19161a8a 0%, #414949 100%);
     transform: translate3d(0, 0, 0) scale(0.95);
     filter: blur(20px);
 }
@@ -38,19 +52,21 @@
 
 .card .img-content {
     width: 100%;
-    height: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    background: linear-gradient(-45deg, #19161a8a 0%, #414949 100%);
     transition: scale 0.6s, rotate 0.6s, filter 1s;
 }
 
-.card .img-content svg {
-    width: 50px;
-    height: 50px;
-    fill: #212121;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+.st53 {
+    width: 240px;
+    height: auto;
+    fill: none;
+    stroke: #53545c;
+    stroke-width: 1.848;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10
 }
 
 .card .content {
@@ -63,7 +79,8 @@
     flex-direction: column;
     justify-content: center;
     gap: 10px;
-    color: #e8e8e8;
+    color: #ababad;
+    -webkit-text-stroke: 0.5px black;
     padding: 20px 24px;
     line-height: 1.5;
     border-radius: 5px;
@@ -71,6 +88,11 @@
     pointer-events: none;
     transform: translateY(50px);
     transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.overview{
+    color:#ababad;
+    font-size: 1.5em;
+    font-weight: 600;
 }
 
 .card .content .heading {
@@ -84,11 +106,25 @@
 }
 
 .card:hover .img-content {
-    scale: 1;
-    rotate: 30deg;
+    scale: 2;
+
     filter: blur(3px);
 }
 
 .card:hover .img-content svg {
     fill: transparent;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    width: 80px auto;
+}
+
+.page-item {
+    font-size: 12px;
+}
+
+.page-link {
+    color: #000;
 }

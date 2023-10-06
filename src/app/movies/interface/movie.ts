@@ -1,14 +1,9 @@
 export interface Movies {
-    dates:         Dates;
+    dates:         string;
     page:          number;
     results:       Result[];
     total_pages:   number;
     total_results: number;
-}
-
-export interface Dates {
-    maximum: Date;
-    minimum: Date;
 }
 
 export interface Result {

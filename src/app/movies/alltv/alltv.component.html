@@ -1,54 +1,65 @@
+<!-- Reusable navbar or header component -->
 <app-header></app-header>
 <!-- Input the search -->
 <div class="container">
-    <div class="input-group">
-      <input type="text"
-             class="form-control input-search"
-             [(ngModel)]="searchControl"
-             placeholder="Search Tv Series"
-             [autocomplete]="true"
-             (keyup.enter)="searchForName">
-      <button class="btn btn-dark button-search" (click)="searchForName()">Search</button>
+  <div class="input-group">
+    <input type="text"
+      class="form-control input-search"
+      [(ngModel)]="searchControl"
+      placeholder="Search Tv Series"
+      [autocomplete]="true"
+      (keyup.enter)="searchForName">
+    <button class="btn btn-dark button-search" (click)="searchForName()">Search</button>
+  </div>
+  <!--Card the tv -->
+  <div class="container">
+    <div class="card-container-dad">
+      <div class="card-container" *ngFor="let item of playingTv"
+        (click)="tvDetails(item.id)">
+        <div class="card">
+        <!-- Tv image function-->
+          <div class="img-content">
+            <img [src]="getImageUrl(item.poster_path)" class="st53">
+          </div>
+           <!-- Tv title y Overview-->
+          <div class="content">
+            <p class="heading">{{item.name}}</p>
+            <p class="overview">
+              {{item.overview  | slice: 0:50 }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
-<div class="container">
-    <div class="card-container" *ngFor="let item of playingTv" (click)="tvDetails(item.id)">
-        <div class="card">
-        <div class="img-content">
-            <img [src]="getImageUrl(item.poster_path)" class="st53">
-        </div>
-        <div class="content">
-          <p class="heading">{{item.name}}</p>
-          <p>
-           {{item.overview}}
-          </p>
-        </div>
-      </div>
-      </div>
-
-       <!-- Pagination the tvs -->
-  <div class="container-Event">
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <!-- Previous event -->
-        <li class="page-item">
-          <a class="page-link" (click)="previousPage(page)" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <!-- Pagination event -->
-        </li>
-        <li class="page-item"><a class="page-link" (click)="directPageOne(page)">{{page}}</a></li>
-        <li class="page-item"><a class="page-link" (click)="directPageTwo(page)">{{page+1}}</a></li>
-        <li class="page-item"><a class="page-link" (click)="directPageTree(page)">{{page+2}}</a></li>
-        <!-- Next event -->
-        <li class="page-item">
-          <a class="page-link" (click)="nextPage(page)" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <!-- Pagination the tvs -->
+    <div class="container-Event">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <!-- Previous event -->
+          <li class="page-item">
+            <a class="page-link" (click)="previousPage(page)"
+              aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <!-- Pagination event -->
+          </li>
+          <li class="page-item"><a class="page-link"
+              (click)="directPageOne(page)">{{page}}</a></li>
+          <li class="page-item"><a class="page-link"
+              (click)="directPageTwo(page)">{{page+1}}</a></li>
+          <li class="page-item"><a class="page-link"
+              (click)="directPageTree(page)">{{page+2}}</a></li>
+          <!-- Next event -->
+          <li class="page-item">
+            <a class="page-link" (click)="nextPage(page)" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+     <!-- End Pagination -->
   </div>
-</div>

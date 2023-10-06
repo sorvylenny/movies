@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
 body {
   font-family: 'PT Serif', serif;
 }
@@ -12,47 +13,55 @@ h1, h2, h3, label, input {
 blockquote, .slab-text {
   font-family: 'PT Serif', serif;
 }
-.Title{
+
+.Title {
   text-align: center;
   color: rgb(8, 8, 8);
   font-size: 800;
   margin-top: 80px;
   margin-bottom: 0;
 }
-.sections{
+
+.sections {
   display: flex;
   justify-content: center;
   margin: 80px;
 }
-.Contend-Dad{
+
+.Contend-Dad {
   background-color: #212529;
   border: 2px solid;
   border-radius: 2rem;
 
 }
-.contend-son{
+
+.contend-son {
   width: auto;
 }
 
-.form-label{
-  font-size: large ;  
-  color:#ffffff;
+.form-label {
+  font-size: large;
+  color: #ffffff;
   font-weight: 600;
 }
-a{
-  color:#ffffff;
-}
-.form-check-label{
+
+a {
   color: #ffffff;
 }
-.link{
+
+.form-check-label {
+  color: #ffffff;
+}
+
+.link {
   font-weight: bold;
   text-align: center;
-  text-decoration: none; /* Elimina cualquier subrayado o decoración del enlace */
+  text-decoration: none;
   cursor: pointer;
   font-family: 'Merriweather', serif;
 }
-.botton{
+
+.botton {
   display: flex;
   justify-content: center;
 }

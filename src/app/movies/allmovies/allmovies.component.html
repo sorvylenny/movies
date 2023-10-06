@@ -1,4 +1,4 @@
-<!-- reusable navbar or header component -->
+<!-- Reusable navbar or header component -->
 <app-header></app-header>
 <!-- Input the search -->
 <div class="container">
@@ -15,7 +15,7 @@
   <!-- Card the movies -->
   <div class="card-container">
     <div class="card" *ngFor="let item of playingMovie"(click)="movieDetails(item.id)">
-      <!-- Movies image url-->
+      <!-- Movies image url function-->
       <div class="card__img"><img [src]="getImageUrl(item.poster_path)" class="st53"></div>
       <!-- Movie title-->
       <div class="card__subtitle">{{item.title}}</div>

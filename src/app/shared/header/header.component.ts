@@ -23,7 +23,28 @@ export class HeaderComponent implements OnInit {
   destroySession() {
     localStorage.clear();
     this.userName=''
-    this.router.navigate(['']);
+    this.router.navigate(['/']);
+  }
+
+  toLogin() {
+   
+    this.router.navigate(['./auth/login']);
+  }
+
+  toMovies() {
+    
+    this.router.navigate(['./allMovies']);
+  }
+
+  toTv() {
+    
+    
+    this.router.navigate(['./allTv']);
+  }
+
+ toHome() {
+    
+    this.router.navigate(['/']);
   }
 }
 
