@@ -22,15 +22,15 @@
       <!-- tv Gender-->
       <div class="card__subtitle">
         <div class>
-          <span class="subtitle"> <strong>Gender:</strong>
-            <ul>
+          <span class="subtitle">  <strong *ngIf="tv?.genres && tv?.genres.length > 0">Gender:</strong>
+            <ul *ngIf="tv?.genres && tv?.genres.length > 0">
               <li *ngFor="let gender of tv?.genres">{{ gender?.name }}</li>
             </ul></span>
         </div>
       </div>
       <!-- tv Overview-->
       <div class="container">
-        <strong>Overview</strong>
+        <strong *ngIf="tv?.overview && tv?.overview.trim() !== ''">Overview</strong>
         <p class="card__descr">
           {{tv?.overview}}
         </p>

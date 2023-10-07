@@ -30,17 +30,19 @@ export class AllmoviesComponent implements OnInit {
   }
   /* Method information from the search movies service */
   searchForName() {
+    if (this.searchControl && this.searchControl.trim() !== '') {
     this.movieService
       .searchMovie(this.searchControl)
       .subscribe((search: any) => {
         this.playingMovie = search.results;
       });
+    }
   }
 
   /*Pagination method the previous*/
   previousPage(page: number) {
     if (page === 1) {
-  
+      this.scrollToTop();
       return;
     }
     this.allMovies((this.page = page - 1));
@@ -48,21 +50,21 @@ export class AllmoviesComponent implements OnInit {
   /*Pagination method the next*/
   nextPage(page: number) {
     this.allMovies((this.page = page + 1));
-   
+    this.scrollToTop()     
   }
   /* Methods to capture page addresses */
   directPageOne(page: number) {
     this.allMovies((this.page = page));
-  
+    this.scrollToTop()    
   }
 
   directPageTwo(page: number) {
     this.allMovies((this.page = page + 1));
-   
+    this.scrollToTop()     
   }
   directPageTree(page: number) {
     this.allMovies((this.page = page + 2));
-  
+    this.scrollToTop()  
   }
   /* Method to browse the movie id and see more information about it */
   movieDetails(id: number) {
@@ -81,11 +83,11 @@ export class AllmoviesComponent implements OnInit {
     }
   }
   /* ScrollToTop function scrolls the browser window */
- /*  private scrollToTop() {
+  private scrollToTop() {
     const targetElement = this.elementRef.nativeElement;
     window.scrollTo({
       top: targetElement.offsetTop,
       behavior: "smooth"
     });
-  } */
+  } 
 }

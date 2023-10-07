@@ -2,14 +2,16 @@
 <app-header></app-header>
 <!-- Input the search -->
 <div class="container">
-  <div class="input-group">
-    <input type="text"
-           class="form-control input-search"
-           [(ngModel)]="searchControl"
-           placeholder="Search Movies"
-           [autocomplete]="true"
-           (keyup.enter)="searchForName">
-    <button class="btn btn-dark button-search" (click)="searchForName()">Search</button>
+  <div class="input-Dad">
+    <div class="input-group">
+      <input type="text"
+             class="form-control input-search"
+             [(ngModel)]="searchControl"
+             placeholder="Search Movies"
+             [autocomplete]="true"
+             (keyup.enter)="searchForName()">
+      <button class="btn btn-dark button-search" (click)="searchForName()">Search</button>
+    </div>
   </div>
   
   <!-- Card the movies -->

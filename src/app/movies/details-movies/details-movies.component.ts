@@ -20,19 +20,21 @@ export class DetailsMoviesComponent implements OnInit{
     this.movieDetail (movieId)
   }
 
-  movieDetail(id:number){
-    this.movieService.movieDetail(id)
-    .subscribe((data:any) => {
-    this.movie = data;
-    console.log(this.movie)
-   });
-  }
+/* Fetches movie details by ID */
+movieDetail(id: number) {
+  this.movieService.movieDetail(id)
+    .subscribe((data: any) => {
+      this.movie = data;
+    });
+}
 
-  calculateDuration(): { hours: number, minutes: number } {
-    const hours = Math.floor(this.movie?.runtime / 60);
-    const minutes = this.movie?.runtime % 60;
-    return { hours, minutes };
-  }
+/* Calculates movie duration in hours and minutes */
+calculateDuration(): { hours: number, minutes: number } {
+  const hours = Math.floor(this.movie?.runtime / 60);
+  const minutes = this.movie?.runtime % 60;
+  return { hours, minutes };
+}
+
  
  allCharacters() {
   this.router.navigate(['/'])
@@ -56,10 +58,9 @@ export class DetailsMoviesComponent implements OnInit{
       
     } else {
 
-    return 'https://image.tmdb.org/t/p/w500'+ logo_path;
-  }
+      return 'https://image.tmdb.org/t/p/w500'+ logo_path;
+    }
       
   }
   
- 
 }

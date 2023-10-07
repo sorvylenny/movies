@@ -13,6 +13,12 @@ export class MoviesService {
 
   constructor(private http: HttpClient) {}
 
+  /**
+ * Retrieves a list of movies currently playing in theaters.
+ * @param page Page number for pagination.
+ * @returns Observable of Result[] containing movie information.
+ */
+
   moviesAll(page: number): Observable<Result[]> {
     const url = `${this.baseUrl}/movie/now_playing?language=en-US&page=` + page;
     const singedToken = this.token;
@@ -26,6 +32,11 @@ export class MoviesService {
     }
   }
 
+  /**
+ * Retrieves a list of popular movies.
+ * @param page Page number for pagination.
+ * @returns Observable of Result[] containing movie information.
+ */
   sliderMovies(page: number): Observable<Result[]> {
     const url = `${this.baseUrl}/movie/popular?language=en-US&page=1` + page;
     const singedToken = this.token;
@@ -38,7 +49,11 @@ export class MoviesService {
       return of([]);
     }
   }
-
+/**
+ * Retrieves detailed information about a specific movie.
+ * @param id Movie ID.
+ * @returns Observable of Result[] containing movie information.
+ */
   movieDetail(id: number): Observable<Result[]> {
     const url = `${this
       .baseUrl}/movie/${id}?&include_adult=false&language=en-US&page=1`;
@@ -52,7 +67,11 @@ export class MoviesService {
       return of([]);
     }
   }
-
+/**
+ * Searches for movies based on the provided query.
+ * @param query Search query for movies.
+ * @returns Observable of Result[] containing movie search results.
+ */
   searchMovie(query: string): Observable<Result[]> {
     const url = `${this.baseUrl}/search/movie`;
 

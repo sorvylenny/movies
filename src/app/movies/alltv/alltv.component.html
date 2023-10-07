@@ -8,7 +8,7 @@
       [(ngModel)]="searchControl"
       placeholder="Search Tv Series"
       [autocomplete]="true"
-      (keyup.enter)="searchForName">
+      (keyup.enter)="searchForName()">
     <button class="btn btn-dark button-search" (click)="searchForName()">Search</button>
   </div>
   <!--Card the tv -->

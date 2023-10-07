@@ -131,6 +131,11 @@ body {
 
 /* Estilos para pantallas de 425px a 767px */
 @media (min-width: 425px) and (max-width: 767px) {
+    .input-group {
+        display: flex;
+        justify-content: center;
+        margin-top: 110px;
+    }
     .card-container-dad {
       justify-content: center; 
     }

@@ -21,7 +21,7 @@ export class DetailsTvComponent {
     let tvId : any = this.activerouter.snapshot.paramMap.get('id')
     this.tvDetail (tvId)
   }
-
+  /* Fetches TV show details by ID */
   tvDetail(id:number){
     this.tvService.tvDetail(id)
     .subscribe((data:any) => {
@@ -30,7 +30,7 @@ export class DetailsTvComponent {
    });
   }
 
- 
+ /* Navigates to the home page */
  allCharacters() {
   this.router.navigate(['/'])
  }
@@ -53,11 +53,9 @@ export class DetailsTvComponent {
       
     } else {
 
-    return 'https://image.tmdb.org/t/p/w500'+ logo_path;
-  }
+     return 'https://image.tmdb.org/t/p/w500'+ logo_path;
+    }
       
   }
-  
-
 
 }

@@ -26,14 +26,15 @@ export class AlltvComponent implements OnInit {
   allTv(page: number) {
     this.tvService.tvAll(this.page).subscribe((tv: any) => {
       this.playingTv = tv.results;
-      console.log(this.playingTv);
     });
   }
   /* Method information from the search tv service */
   searchForName() {
-    this.tvService.searchTv(this.searchControl).subscribe((search: any) => {
-      this.playingTv = search.results;
-    });
+    if (this.searchControl && this.searchControl.trim() !== '') {
+      this.tvService.searchTv(this.searchControl).subscribe((search: any) => {
+        this.playingTv = search.results;
+      });
+    }
   }
 
   /*Pagination method the previous*/

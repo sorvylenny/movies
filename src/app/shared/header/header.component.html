@@ -1,65 +1,68 @@
-<nav class="navbar navbar-dark bg-dark fixed-top">
-  <div class="container-fluid nav-Dad">
-    <!-- Navbar Brand -->
-    <a class="navbar-brand" (click)="toHome()">You Movies And TV App </a>
-    <!-- Display username -->
-    <div class="navbar-brand username d-flex align-items-end">
-      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-      <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-    </svg> {{userName}} </div>
-    
-    <!-- Navbar Toggle Button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Offcanvas Navbar -->
-    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1"
-      id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-      <div class="offcanvas-header">
-        <!-- Offcanvas Title -->
-        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
-        <!-- Close Button -->
-        <button type="button" class="btn-close btn-close-white"
-          data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <!-- Navbar Items -->
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" (click)="toHome()">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./allMovies">Movies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./allTv">TV</a>
-          </li>
-          <li class="nav-item dropdown">
-            <!-- Dropdown Menu -->
-            <a class="nav-link dropdown-toggle" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              User Account
-            </a>
-            <!-- Dropdown Menu Items -->
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li>
-                <a class="dropdown-item" (click)="toLogin()">Sign In</a>
-              </li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li>
-                <a class="dropdown-item" routerLink="/" (click)="destroySession()">Log
-                  Out</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+<div>
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid nav-Dad">
+      <!-- Navbar Brand -->
+      <a class="navbar-brand" (click)="toHome()">You Movies And TV App </a>
+      <!-- Display username -->
+      <div class="navbar-brand username d-flex align-items-end">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+      </svg> {{userName}} </div>
+      
+      <!-- Navbar Toggle Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Offcanvas Navbar -->
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1"
+        id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <!-- Offcanvas Title -->
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+          <!-- Close Button -->
+          <button type="button" class="btn-close btn-close-white"
+            data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <!-- Navbar Items -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" (click)="toHome()">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./allMovies">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./allTv">TV</a>
+            </li>
+            <li class="nav-item dropdown">
+              <!-- Dropdown Menu -->
+              <a class="nav-link dropdown-toggle" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                User Account
+              </a>
+              <!-- Dropdown Menu Items -->
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li>
+                  <a class="dropdown-item" (click)="toLogin()">Sign In</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <a class="dropdown-item" routerLink="/" (click)="destroySession()">Log
+                    Out</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+
+</div>
