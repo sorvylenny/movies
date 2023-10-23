@@ -2,8 +2,6 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { MoviesService } from "../services/movies.service";
 import { ImageDataMovie, Result } from "../interface/movie";
 import { Router } from "@angular/router";
-import { FormControl } from "@angular/forms";
-import { NgImageSliderComponent } from "ng-image-slider";
 import { TvService } from "../services/tv.service";
 import { ImageDataTv } from "../interface/tv.interface";
 
@@ -74,13 +72,23 @@ export class HomeComponent implements OnInit {
     const clickedImage: ImageDataMovie = this.imgCollectionMovies[index];
     const movieId = clickedImage.movieId;
 
-    this.router.navigate(["detailsMovie", movieId]);
+    this.router.navigate(['/detailsMovie', movieId]);
   }
 
 /* Event handler for image click in the TV show slider */
   handleImageClickTv(index: number) {
     const clickedImage: ImageDataTv = this.imgCollectionTv[index];
     const tvId = clickedImage.tvId;
-    this.router.navigate(["detailsTv", tvId]);
+    this.router.navigate(['/detailsTv', tvId]);
+  }
+
+  getImageSize(): any {
+    if (window.innerWidth < 767) {
+      return { width: 300, height: 150, space: 6 };
+    } else if (window.innerWidth < 1200) {
+      return { width: 650, height: 300, space: 8 };
+    } else {
+      return { width: 800, height: 400, space: 10 };
+    }
   }
 }

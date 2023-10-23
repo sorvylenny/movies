@@ -3,7 +3,7 @@ header {
   font-family: 'PT Serif', serif;
 }
 
-.username{
+.name{
   font-size: 16px !important ;
   color:#e7effa !important;
   margin-left: 0;
@@ -20,34 +20,66 @@ header {
 }
 /* Estilos para pantallas de 768px en adelante */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .username {
+  .name {
     font-size: 16px !important;
-    margin-left: 0; /* Ajusta el margen a tu necesidad */
+    margin-left: 0; 
   }
 
   .nav-Dad {
-    width: 80%; /* O el porcentaje que desees */
+    width: 100%;
   }
 }
 
 /* Estilos para pantallas de 425px a 767px */
 
   @media (min-width: 425px) and (max-width: 767px) {
-    .username {
+    .name {
       font-size: 12px;
-      margin-left: 0; /* Ajusta el margen a tu necesidad */
+      margin-left: 0; 
     }
   
     .nav-Dad {
-      width: 80%;
+      width: 100%;
       display: flex;
-      justify-content: space-between; /* Coloca los elementos al principio y al final */
+      justify-content: space-between; 
     }
   
     .navbar-toggler {
-      order: 3; /* Mueve el botón de hamburguesa al principio del contenedor */
-      margin-right: 10px; /* Ajusta el margen derecho según sea necesario */
+      order: 3; 
+      margin-right: 10px; 
+    } 
+    .navbar-brand{
+      font-size: 12px;
     }
-  
+    .navbar-brand svg {
+      width: 20px; 
+    }
+   
 }
+
+@media screen and (min-width: 320px) and (max-width: 424px){
+  .name {
+    font-size: 12px;
+    margin-left: 0; 
+  }
+
+  .nav-Dad {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+  }
+
+  .navbar-toggler {
+    order: 2; 
+    margin-right: 0px; 
+  }
+  .navbar-brand{
+    font-size: 11px;
+  }
+  .navbar-brand svg {
+    width: 15px; 
+    height: 20px; 
+  }
+}
+
 

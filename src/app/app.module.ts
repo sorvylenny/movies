@@ -4,7 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MoviesModule } from './movies/movies.module';
+
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { MoviesModule } from './movies/movies.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

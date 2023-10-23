@@ -77,7 +77,24 @@ body {
     display: flex;
     justify-content: center;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 1rem;
+    font-family: 'Dela Gothic One', cursive;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 424px){
+  .slice-Movies{
+    width: 100%;
+    margin-top: 150px;
+  }
+  .slice-tv{
+    width: 100%;
+    margin-top: 50px;
+  }
+  .main-title{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
     font-family: 'Dela Gothic One', cursive;
   }
 }

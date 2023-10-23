@@ -136,6 +136,11 @@ body {
         justify-content: center;
         margin-top: 110px;
     }
+    .input-Dad{
+        width: 100%;
+        display: flex;
+        margin-top: 15px;
+    }
     .card-container-dad {
       justify-content: center; 
     }

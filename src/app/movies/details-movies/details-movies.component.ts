@@ -17,7 +17,7 @@ export class DetailsMoviesComponent implements OnInit{
 
    ngOnInit(): void {
     let movieId : any = this.activerouter.snapshot.paramMap.get('id')
-    this.movieDetail (movieId)
+    this.movieDetail (movieId);
   }
 
 /* Fetches movie details by ID */
@@ -35,6 +35,13 @@ calculateDuration(): { hours: number, minutes: number } {
   return { hours, minutes };
 }
 
+toAllMovies() {
+  // Obtener el número de página actual
+  const currentPage = this.activerouter.snapshot.queryParamMap.get('page') || 1;
+
+  // Navegar a la página de lista y pasar el número de página como parámetro de consulta
+  this.router.navigate(['/allMovies'], { queryParams: { page: currentPage } });
+}
  
  allCharacters() {
   this.router.navigate(['/'])

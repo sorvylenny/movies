@@ -1,5 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component,  Input, OnInit} from "@angular/core";
 import { Router } from "@angular/router";
+
+
 
 @Component({
   selector: "app-header",
@@ -7,19 +9,25 @@ import { Router } from "@angular/router";
   styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit {
-  userName: any = "";
-
+  @Input() userName: string = 'Guest';
+  
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.getUserName();
+  this.getUserName();
+    
   }
-
+ 
   /**
  * Retrieves the username from local storage.
  */
   getUserName() {
-    this.userName = localStorage.getItem("userName");
+    const storedUserName = localStorage.getItem('userName');
+      if (storedUserName) {
+        console.log('userName updated', storedUserName); 
+      this.userName = storedUserName;
+     
+    }
   }
 
   /**
@@ -29,20 +37,26 @@ export class HeaderComponent implements OnInit {
   destroySession() {
     localStorage.setItem("userName", "Guest");
     this.userName = "Guest";
-    this.router.navigate(["/"]);
+    this.router.navigate(['/']);
   }
 
   /**
  * Navigates to the login page.
  */
   toLogin() {
-    this.router.navigate(["./auth/login"]);
+    this.router.navigate(['./auth/login']);
+  }
+  toAllMovies() {
+    this.router.navigate(['/allMovies']);
+  }
+  toAllTv() {
+    this.router.navigate(['/allTv']);
   }
 
   /**
  * Navigates to the home page ("/").
  */
   toHome() {
-    this.router.navigate(["/"]);
+    this.router.navigate(['/']);
   }
 }

@@ -14,6 +14,10 @@ body {
   border-radius: 2rem;
 }
 
+.input-Dad{
+  display: flex; 
+}
+
 .button-search {
   border-radius: 2rem;
 }
@@ -205,7 +209,7 @@ body {
   }
   .input-Dad{
     width: 100%;
-    margin-top: 110px;
+    display: flex;
   }
 
   .input-search {
@@ -233,8 +237,9 @@ body {
     margin-top: 110px;
 }
 .input-Dad{
-  width: 80%;
-  margin-top: 90px;
+  width: 100%;
+  display: flex;
+  margin-top: 15px;
 }
 
   .button-search {

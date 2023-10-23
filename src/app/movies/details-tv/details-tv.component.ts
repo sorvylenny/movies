@@ -34,6 +34,10 @@ export class DetailsTvComponent {
  allCharacters() {
   this.router.navigate(['/'])
  }
+
+ toAllTv() {
+  this.router.navigate(['/allTv']);
+}
  /* Method to display the image */
  getImageUrl(poster_path: string): string {
   if (!poster_path || poster_path.toLowerCase() === 'null' || poster_path.trim() === '') {

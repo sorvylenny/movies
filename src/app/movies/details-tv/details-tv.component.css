@@ -158,20 +158,20 @@ body {
     }
   
     .card__title {
-      font-size: 12px; 
+      font-size: 20px;
     }
   
     .card__img {
-      border-radius: 15px 15px 0 0; 
+      border-radius: 15px 15px 0 0;
     }
   
     .st53 {
-      width: 250px;
+      width: 150px;
       height: auto;
     }
   
     .subtitle {
-      font-size: 6px; 
+      font-size: 14px;
       text-align: left;
     }
   
@@ -180,25 +180,29 @@ body {
       position: absolute;
       font-size: 10px;
     }
+  
     .production-item {
-       margin: 0 5px; 
+      margin: 0 5px;
     }
+  
     .production-row {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
     }
+  
     .image-production {
-      width: 40px; 
+      width: 40px;
       height: auto;
     }
+  
     .card__descr {
       color: var(--font-color);
       text-align: justify;
-      font-size: 11px;
+      font-size: 14px;
       margin-top: 10px;
     }
-    
+  
     .card__links {
       margin-top: 10px;
       margin-right: 10px;
@@ -219,13 +223,94 @@ body {
       font-weight: 900;
       font-family: 'PT Serif', serif;
     }
-    
+  
     button:hover {
       background: #f5f6f8;
       color: #5b5d66;
       font-size: 7px;
     }
   }
+  @media screen and (min-width: 320px) and (max-width: 424px){
+    .card {
+      width: auto;
+      height: auto;
+      margin: 130px auto;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
   
+    .card__title {
+      font-size: 20px;
+    }
   
+    .card__img {
+      border-radius: 15px 15px 0 0;
+    }
   
+    .st53 {
+      width: 150px;
+      height: auto;
+    }
+  
+    .subtitle {
+      font-size: 14px;
+      text-align: left;
+    }
+  
+    .subtitle ul li::before {
+      content: "";
+      position: absolute;
+      font-size: 10px;
+    }
+  
+    .production-item {
+      margin: 0 5px;
+    }
+  
+    .production-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  
+    .image-production {
+      width: 40px;
+      height: auto;
+    }
+  
+    .card__descr {
+      color: var(--font-color);
+      text-align: justify;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  
+    .card__links {
+      margin-top: 10px;
+      margin-right: 10px;
+      display: flex;
+      justify-content: center;
+    }
+  
+    button {
+      width: 100px;
+      height: 40px;
+      border: 3px solid #474f69;
+      border-radius: 45px;
+      transition: all 0.3s;
+      cursor: pointer;
+      background: white;
+      color: #4a4e5c;
+      font-size: 14px;
+      font-weight: 900;
+      font-family: 'PT Serif', serif;
+    }
+  
+    button:hover {
+      background: #f5f6f8;
+      color: #5b5d66;
+      font-size: 7px;
+    }
+  }

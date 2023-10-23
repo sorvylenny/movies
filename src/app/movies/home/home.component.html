@@ -1,15 +1,15 @@
-<app-header></app-header>
+
 <div class="container">
     <div class="slice-Movies">
     <ng-image-slider 
     [images]="imgCollectionMovies"
     [direction]="'ltr'"
     [infinite]="true"
-    [animationSpeed]="3"
-    [slideImage]="2"
+    [animationSpeed]="2"
+    [slideImage]="1"
     [autoSlide]="{ interval: 2, stopOnHover: false }"
     [lazyLoading]="true"
-    [imageSize]="{width: 650, height: 300, space: 10}"
+    [imageSize]="getImageSize()"
     [showArrow]="false"
     [imagePopup]="true"
     (imageClick)="handleImageClickMovie($event)"
@@ -24,9 +24,9 @@
         [direction]="'rtl'"
         [infinite]="true"
         [showArrow]="false"
-        [animationSpeed]="3"
-        [imageSize]="{width: 650, height: 300, space: 10}"
-        [slideImage]="2"
+        [animationSpeed]="2"
+        [imageSize]="getImageSize()"
+        [slideImage]="1"
         [autoSlide]="{ interval: 2, stopOnHover: false }"
         [lazyLoading]="true"
         (imageClick)="handleImageClickTv($event)"
